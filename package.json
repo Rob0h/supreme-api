@@ -5,7 +5,7 @@
   "main": "/build/server.js",
   "scripts": {
     "dev": "nodemon --watch . -e ts --exec \"yarn run compile\"",
-    "compile": "tsc && node build/server.js",
+    "compile": "tsc && node build/src/server.js",
     "build": "tsc",
     "test": "mocha --exit --globals testApp,chai ./build/test/boot.js \"./build/**/*_test.js\""
   },

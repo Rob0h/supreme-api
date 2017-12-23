@@ -4,7 +4,7 @@ import { Model } from "objection";
 
 import * as routes from "./routes";
 
-const knexConfig = require("../Knexfile");
+const knexConfig = require("../../Knexfile");
 const knex = Knex(knexConfig.development);
 Model.knex(knex);
 

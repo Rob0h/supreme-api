@@ -25,7 +25,7 @@ RUN yarn --pure-lockfile
 
 ENV NODE_ENV=production
 ENV PORT=8912
-ENV SEMAPHORE=true
+ENV SEMAPHORE="true"
 EXPOSE 8912
 
 ADD . /home/api
