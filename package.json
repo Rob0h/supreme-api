@@ -1,0 +1,37 @@
+{
+  "name": "test-api",
+  "version": "0.0.1",
+  "description": "Just some API",
+  "main": "/build/server.js",
+  "scripts": {
+    "dev": "nodemon --watch . -e ts --exec \"yarn run compile\"",
+    "compile": "tsc && node build/server.js",
+    "build": "tsc",
+    "test": "mocha --exit --globals testApp,chai ./build/test/boot.js \"./build/**/*_test.js\""
+  },
+  "dependencies": {
+    "@types/chai": "^4.0.10",
+    "@types/mocha": "^2.2.44",
+    "apprequire": "^1.0.1",
+    "chai": "^4.1.2",
+    "hapi": "^17.2.0",
+    "knex": "^0.14.2",
+    "mocha": "^4.0.1",
+    "objection": "^0.9.3",
+    "pg": "^7.4.0",
+    "ramda": "^0.25.0",
+    "require-all": "^2.2.0",
+    "traverse": "^0.6.6",
+    "typescript": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^8.5.2",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-config-videoamp": "^2.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.14.1",
+    "tslint": "^5.8.0",
+    "tslint-microsoft-contrib": "^5.0.1"
+  }
+}

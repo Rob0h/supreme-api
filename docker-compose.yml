@@ -1,0 +1,8 @@
+version: "3"
+services:
+  web:
+    build: .
+    links:
+    - db
+  db:
+    image: rob0h/test-grail
