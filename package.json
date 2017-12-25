@@ -7,7 +7,8 @@
     "dev": "nodemon --watch . -e ts --exec \"yarn run compile\"",
     "compile": "tsc && node build/src/server.js",
     "build": "tsc",
-    "test": "mocha --exit --globals testApp,chai ./build/test/boot.js \"./build/**/*_test.js\""
+    "test": "mocha --exit --globals testApp --require ts-node/register ./test/boot.ts \"./test/**/*_test.ts\"",
+    "test:ci": "nyc --reporter=text-lcov yarn test | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {
     "@types/chai": "^4.0.10",
@@ -26,11 +27,14 @@
   },
   "devDependencies": {
     "@types/node": "^8.5.2",
+    "coveralls": "^3.0.0",
     "eslint": "^3.17.1",
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-config-videoamp": "^2.1.0",
     "eslint-plugin-import": "^2.8.0",
     "nodemon": "^1.14.1",
+    "nyc": "^11.4.1",
+    "ts-node": "^4.1.0",
     "tslint": "^5.8.0",
     "tslint-microsoft-contrib": "^5.0.1"
   }

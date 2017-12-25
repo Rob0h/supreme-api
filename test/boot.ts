@@ -1,7 +1,7 @@
 import * as Knex from 'knex';
 import { Model } from "objection";
 
-const knexConfig = require("../../Knexfile");
+const knexConfig = require("../Knexfile");
 
 let dbConnection = knexConfig.development;
 if (process.env.SEMAPHORE) {
