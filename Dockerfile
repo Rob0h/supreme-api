@@ -17,10 +17,10 @@ RUN useradd docker
 
 WORKDIR /home/api
 
-ADD .nvmrc /home/api/
+COPY .nvmrc /home/api/
 RUN n $(cat .nvmrc)
 
-ADD package.json yarn.lock /home/api/
+COPY package.json yarn.lock /home/api/
 RUN yarn --pure-lockfile
 
 ENV NODE_ENV=production
@@ -28,7 +28,7 @@ ENV PORT=8912
 ENV SEMAPHORE="true"
 EXPOSE 8912
 
-ADD . /home/api
+COPY . /home/api
 RUN yarn build
 
 CMD dockerize -wait tcp://db:5432 -timeout 90s yarn test:ci
