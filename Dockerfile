@@ -31,4 +31,4 @@ EXPOSE 8912
 COPY . /home/api
 RUN yarn build
 
-CMD dockerize -wait tcp://db:5432 -timeout 90s yarn test:ci
+CMD yarn start

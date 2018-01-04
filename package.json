@@ -2,11 +2,12 @@
   "name": "test-api",
   "version": "0.0.1",
   "description": "Just some API",
-  "main": "/build/server.js",
+  "main": "/build/src/server.js",
   "scripts": {
     "dev": "nodemon --watch . -e ts --exec \"yarn run compile\"",
-    "compile": "tsc && node build/src/server.js",
+    "compile": "tsc && yarn start",
     "build": "tsc",
+    "start": "node build/src/server.js",
     "test": "mocha --exit --globals testApp --require ts-node/register ./test/boot.ts \"./test/**/*_test.ts\"",
     "test:ci": "nyc --reporter=text-lcov yarn test | ./node_modules/coveralls/bin/coveralls.js"
   },

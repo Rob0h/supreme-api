@@ -8,5 +8,6 @@ services:
     image: rob0h/test-grail-cache:$BRANCH_NAME
     external_links:
     - db
+    command: dockerize -wait tcp://db:5432 -timeout 90s yarn test:ci
   db:
     image: rob0h/test-grail
