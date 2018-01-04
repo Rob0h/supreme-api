@@ -5,6 +5,7 @@ services:
       context: .
       cache_from:
       - rob0h/test-grail-cache
+    image: rob0h/test-grail-cache
     external_links:
     - db
   db:
