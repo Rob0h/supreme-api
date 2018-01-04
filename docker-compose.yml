@@ -4,8 +4,8 @@ services:
     build:
       context: .
       cache_from:
-      - rob0h/test-grail-cache
-    image: rob0h/test-grail-cache:$BRANCH_NAME
+      - rob0h/test-api:$BRANCH_NAME
+    image: rob0h/test-api:$BRANCH_NAME
     external_links:
     - db
     command: dockerize -wait tcp://db:5432 -timeout 90s yarn test:ci
