@@ -5,8 +5,8 @@ class Grail extends Model {
         return "grail";
     }
 
-    readonly id: number;
-    name: string;
+    public readonly id: number;
+    public name: string;
 }
 
 export default Grail;
